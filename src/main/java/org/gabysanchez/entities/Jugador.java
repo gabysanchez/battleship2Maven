@@ -8,12 +8,13 @@ import org.gabysanchez.ui.tablero.EstadoUiTablero;
 
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class Jugador {
+public class Jugador implements Serializable {
     protected FlotaBulider flota;
     protected List<Barco> barcos;
     private Tablero tableroDefensa;
@@ -51,6 +52,10 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getNombre(){
+        return this.nombre;
     }
 
     public Tablero getTableroDefensa() {
@@ -112,6 +117,7 @@ public class Jugador {
     }
 
 
+
     public Barco getNextSelectedBarco() {
         return nextSelectedBarco;
     }
@@ -146,6 +152,9 @@ public class Jugador {
 
     public Casilla getDisparo() {
         return disparo;
+    }
+    public Casilla disparo(){
+        return null;
     }
     /*
     public  void dibujar(){

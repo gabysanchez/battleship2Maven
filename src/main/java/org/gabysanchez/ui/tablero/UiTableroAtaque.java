@@ -50,7 +50,9 @@ public class UiTableroAtaque extends UiTablero{
             @Override
             public void handle(ActionEvent e) {
                 if (getEstado().equals(EstadoUiTablero.USE)){
+                    redraw();
                     ServicioDisparar.getInstance().checkDisparo(bt,Controller.getInstance().getPartida());
+                    sceneTablero.update();
                 }
             }
         };

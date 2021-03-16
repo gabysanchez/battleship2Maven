@@ -1,6 +1,8 @@
 package org.gabysanchez.entities;
 
 
+import org.gabysanchez.application.Controller;
+import org.gabysanchez.application.Dificultad;
 import org.gabysanchez.entities.barcos.Barco;
 import org.gabysanchez.entities.barcos.Posicion;
 
@@ -18,6 +20,7 @@ public class IA extends Jugador {
 
     public IA(int id) {
         super(id);
+        setNombre("Skynet");
     }
 
     public void addBarcos(){
@@ -64,46 +67,92 @@ public class IA extends Jugador {
             }
         }
     }
+    //Inteligencia//
+
+    public Casilla disparo(){
+        Casilla casilla = null;
+        if (Controller.getInstance().getPartida().getDificultad().equals(Dificultad.FACIL)){
+            casilla = random();
+        }else if (Controller.getInstance().getPartida().getDificultad().equals(Dificultad.NORMAL)){
+            casilla = random();
+            casillasVetada.add(casilla);
+        }else if (Controller.getInstance().getPartida().getDificultad().equals(Dificultad.DIFICIL)){
+            casilla = memoryAtac();
+        }else if (Controller.getInstance().getPartida().getDificultad().equals(Dificultad.INFERNAL)){
+            casilla = infernal();
+            casillasVetada.add(casilla);
+        }
+        return casilla;
+    }
+
     public Casilla memoryAtac(){
-        Random random = new Random();
         Casilla casilla = null;
         if (disparo!=null){
             barcoPosicion = disparo.getBarco().getPosicion();
-            if (barcoPosicion.equals(Posicion.VERTICAL)&&disparo.getY()<9){
-                casilla=getTableroAtaque().getCasillas()[disparo.getX()][disparo.getY()+1];
-            }else if (barcoPosicion.equals(Posicion.HORIZONTAL)&&disparo.getX()<9){
-                casilla=getTableroAtaque().getCasillas()[disparo.getX()+1][disparo.getY()];
+            if (barcoPosicion.equals(Posicion.VERTICAL)&&disparo.getY()<(disparo.getBarco().getY()+disparo.getBarco().getLongitud()-1)) {
+                casilla = getTableroAtaque().getCasillas()[disparo.getX()][disparo.getY()+1];
+                disparo = casilla;
+                almacenarCasillas(casilla);
+            }else if (barcoPosicion.equals(Posicion.HORIZONTAL)&&disparo.getX()<(disparo.getBarco().getX()+disparo.getBarco().getLongitud()-1)) {
+                casilla = getTableroAtaque().getCasillas()[disparo.getX() + 1][disparo.getY()];
+                disparo = casilla;
+                almacenarCasillas(casilla);
+            }else {
+                disparo=null;
+                casilla=random();
             }
-            for (int i = casilla.getX() - 1; i <= casilla.getX() + 1; i++) {
-                if (i >= 0 && i <getTableroAtaque().getCasillas().length) {
-                    for (int j = casilla.getY() - 1; j <= casilla.getY() + 1; j++) {
-                        if (j >= 0 && j <getTableroAtaque().getCasillas().length) {
-                            Casilla casilla2 = getTableroAtaque().getCasillas()[i][j];
+        }else {
+           casilla=random();
+        }
+        return casilla;
+    }
+    public Casilla random(){
+        Random random = new Random();
+        Casilla casilla = null;
+        while (true){
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+            casilla = getTableroAtaque().getCasillas()[x][y];
+            if (casilla.getEstado().equals(EstadoCasilla.AGUA)&&!casillasVetada.contains(casilla)){
+                    if (casilla.getBarco()!=null){
+                        if (casilla.getBarco().getLongitud()>1){
+                            casilla=getTableroAtaque().getCasillas()[casilla.getBarco().getX()][casilla.getBarco().getY()];
+                            disparo=casilla;
+                        }
+                        almacenarCasillas(casilla);
+                    }else {
+                        disparo=null;
+                }
+                break;
+            }
+        }
+        return casilla;
+
+    }
+    public void almacenarCasillas(Casilla casilla){
+        for (int i = casilla.getX() - 1; i <= casilla.getX() + 1; i++) {
+            if (i >= 0 && i <getTableroAtaque().getCasillas().length) {
+                for (int j = casilla.getY() - 1; j <= casilla.getY() + 1; j++) {
+                    if (j >= 0 && j <getTableroAtaque().getCasillas().length) {
+                        Casilla casilla2 = getTableroAtaque().getCasillas()[i][j];
+                        if (!casillasVetada.contains(casilla2)&&casilla2.getBarco()!=null){
                             casillasVetada.add(casilla2);
                         }
                     }
                 }
             }
-
-        }else {
-            while (true){
-                int x = random.nextInt(10);
-                int y = random.nextInt(10);
-                casilla = getTableroAtaque().getCasillas()[x][y];
-                if (casilla.getEstado().equals(EstadoCasilla.AGUA)){
-                    if (!casillasVetada.contains(casilla)){
-                        break;
-                    }
-                }
-            }
         }
-        if (casilla.getBarco()!=null&&casilla.getBarco().getLongitud()>1){
-            if (disparo==null){
-                casilla = getTableroAtaque().getCasillas()[casilla.getBarco().getX()][casilla.getBarco().getY()];
+    }
+    public Casilla infernal(){
+        Random random = new Random();
+        Casilla casilla = null;
+        while (true) {
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+            casilla = getTableroAtaque().getCasillas()[x][y];
+            if (casilla.getBarco()!=null&&!casillasVetada.contains(casilla)){
+                break;
             }
-            disparo=casilla;
-        }else {
-            disparo = null;
         }
         return casilla;
     }

@@ -3,7 +3,9 @@ package org.gabysanchez.entities;
 
 import org.gabysanchez.entities.barcos.*;
 
-public class FlotaBulider implements IFlotaBulider {
+import java.io.Serializable;
+
+public class FlotaBulider implements IFlotaBulider, Serializable {
 
     Barco[] arrayBarcos = new Barco[10];
 

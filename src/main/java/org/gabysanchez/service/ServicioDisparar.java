@@ -8,7 +8,9 @@ import org.gabysanchez.entities.Jugador;
 import org.gabysanchez.entities.barcos.EstadoParte;
 import org.gabysanchez.entities.barcos.ParteBarco;
 import org.gabysanchez.ui.tablero.Boton;
+import org.gabysanchez.ui.tablero.EstadoUiTablero;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
@@ -41,16 +43,37 @@ public class ServicioDisparar {
                         ParteBarco parte = partes[i];
                         parte.setEstado(EstadoParte.HUNDIDO);
                     }
+                    jugador.setnBarcos(jugador.getnBarcos()-1);
                 }
             }
+            Controller.getInstance().getScene().getUiTableroAtaque().redraw();
             Controller.getInstance().getPartida().getJ2().setTableroDefensa(Controller.getInstance().getPartida().getJ1().getTableroAtaque());
             Controller.getInstance().getPartida().getJ1().setTableroDefensa(Controller.getInstance().getPartida().getJ2().getTableroAtaque());
         }
     }
     public void checkDisparo(Boton bt, Partida partida){
         disparo(partida.getJ1(), bt.getX(), bt.getY());
-        Casilla casilla = partida.getJ2().memoryAtac();
+        Controller.getInstance().getScene().getUiTableroAtaque().setEstado(EstadoUiTablero.VIEW);
+        Controller.getInstance().getScene().getUiTableroAtaque().redraw();
+        Casilla casilla = partida.getJ2().disparo();
         disparo(partida.getJ2(), casilla.getX(),casilla.getY());
         Controller.getInstance().getPartida().getJ1().setTableroAtaque(Controller.getInstance().getPartida().getJ2().getTableroDefensa());
+        try {
+            Thread.sleep(200);
+            Controller.getInstance().getScene().getUiTableroDefensa().redraw();
+            Controller.getInstance().getScene().getUiTableroAtaque().setEstado(EstadoUiTablero.USE);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (partida.getJ1().getnBarcos()<=0||partida.getJ2().getnBarcos()<=0){
+            try {
+                Controller.getInstance().finish();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void IaDisparo(){
+
     }
 }

@@ -49,7 +49,6 @@ public abstract class SceneTablero {
 
     }
     public void create(){
-        System.out.println("no va");
     }
     public void update(){}
 }

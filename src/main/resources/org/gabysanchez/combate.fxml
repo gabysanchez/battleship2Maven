@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.PrimaryController">
+<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox fx:id="VboxBarcos" alignment="CENTER" prefHeight="670.0" prefWidth="935.0" BorderPane.alignment="CENTER">
          <children>
             <Group fx:id="G2" />
-            <Separator prefHeight="68.0" prefWidth="1230.0" />
+            <Separator maxWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" />
             <Group fx:id="G1" />
          </children>
       </VBox>
@@ -24,7 +24,8 @@
             <Region prefHeight="670.0" prefWidth="100.0" />
             <VBox alignment="CENTER" prefHeight="670.0" prefWidth="158.0" spacing="10.0">
                <children>
-                  <Label text="Hola" />
+                  <Region prefHeight="272.0" prefWidth="146.0" />
+                  <Label text="Dificultad" />
                </children></VBox>
          </children>
       </HBox>
@@ -32,7 +33,14 @@
    <right>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+               <children>
+                  <Label fx:id="name" alignment="CENTER" prefHeight="17.0" prefWidth="80.0" text="J-2" textAlignment="CENTER" />
+                  <Label fx:id="name2" alignment="CENTER" prefHeight="17.0" prefWidth="80.0" text="Valor" textAlignment="CENTER" />
+                  <Region prefHeight="122.0" prefWidth="100.0" />
+                  <Label fx:id="name" alignment="CENTER" prefHeight="17.0" prefWidth="80.0" text="J-1" textAlignment="CENTER" />
+                  <Label fx:id="name1" alignment="CENTER" prefHeight="17.0" prefWidth="80.0" text="Valor" textAlignment="CENTER" />
+               </children></VBox>
             <Region prefHeight="200.0" prefWidth="100.0" />
          </children>
       </HBox>

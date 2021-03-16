@@ -1,17 +1,30 @@
 package org.gabysanchez;
 
 import javafx.fxml.FXML;
-import org.gabysanchez.App;
 import org.gabysanchez.application.Controller;
-import org.gabysanchez.ui.scenes.SceneTablero;
-import org.gabysanchez.ui.scenes.SceneTableroColocar;
 
 import java.io.IOException;
 
 public class MenuContoller {
 
-    @FXML
-    public void start() throws IOException {
-        Controller.getInstance().colocar();
+
+
+
+    public void crear() throws IOException {
+        App.setRoot("menuCrear");
     }
+
+    public void ajustes() throws IOException {
+        App.setRoot("menuAjustes");
+        MenuAjustesContoller menuAjustesContoller = new MenuAjustesContoller();
+        menuAjustesContoller.load();
+    }
+    public void cargarPartida() throws IOException {
+        App.setRoot("menuCargar");
+        MenuCargarController menuCargarController = new MenuCargarController();
+        menuCargarController.load();
+    }
+    public void btClose(){ }
+    public void btMaxi(){ }
+    public void btMin(){ }
 }

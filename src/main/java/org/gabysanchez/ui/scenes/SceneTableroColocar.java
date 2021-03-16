@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.stage.WindowEvent;
+import org.gabysanchez.App;
 import org.gabysanchez.entities.Jugador;
 import org.gabysanchez.entities.barcos.Barco;
 import org.gabysanchez.service.ServicioSelectBarco;
@@ -42,8 +44,8 @@ public class SceneTableroColocar extends SceneTablero{
 
             cajaBoton.getChildren().add(bt);
             cajaBoton.getChildren().add(tx);
-
             panelBotones.getChildren().add(cajaBoton);
+
         }
     }
 

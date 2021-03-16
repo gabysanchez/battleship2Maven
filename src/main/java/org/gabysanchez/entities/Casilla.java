@@ -3,7 +3,9 @@ package org.gabysanchez.entities;
 
 import org.gabysanchez.entities.barcos.Barco;
 
-public class Casilla {
+import java.io.Serializable;
+
+public class Casilla implements Serializable {
     private int x;
     private int y;
     private Barco barco;

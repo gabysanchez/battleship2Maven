@@ -1,7 +1,9 @@
 package org.gabysanchez.entities.barcos;
 
 
-public class Barco {
+import java.io.Serializable;
+
+public class Barco implements Serializable {
     private Integer x;
     private Integer y;
     private ParteBarco [] partes;

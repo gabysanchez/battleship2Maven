@@ -1,6 +1,8 @@
 package org.gabysanchez.entities;
 
-public class Tablero {
+import java.io.Serializable;
+
+public class Tablero implements Serializable {
     private Casilla[][] casillas;
     private  Integer tamTablero;
 
