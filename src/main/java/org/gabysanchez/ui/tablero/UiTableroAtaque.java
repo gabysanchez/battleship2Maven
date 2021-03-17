@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import org.gabysanchez.application.Controller;
+import org.gabysanchez.application.EstadoPartida;
 import org.gabysanchez.entities.Casilla;
 import org.gabysanchez.entities.EstadoCasilla;
 import org.gabysanchez.entities.Jugador;
@@ -52,7 +53,9 @@ public class UiTableroAtaque extends UiTablero{
                 if (getEstado().equals(EstadoUiTablero.USE)){
                     redraw();
                     ServicioDisparar.getInstance().checkDisparo(bt,Controller.getInstance().getPartida());
-                    sceneTablero.update();
+                    if (Controller.getInstance().getPartida().getEstadoPartida().equals(EstadoPartida.COMBATE)){
+                        sceneTablero.update();
+                    }
                 }
             }
         };
