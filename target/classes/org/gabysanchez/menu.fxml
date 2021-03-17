@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuContoller">
+<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@styles/DarkTheme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuContoller">
    <center>
-      <VBox fx:id="VboxBarcos" alignment="CENTER" prefHeight="670.0" prefWidth="935.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="VboxBarcos" alignment="CENTER" prefHeight="670.0" prefWidth="935.0" spacing="25.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#crear" prefWidth="100.0" text="Nueva Partida" />
-            <Button mnemonicParsing="false" onAction="#cargarPartida" prefWidth="100.0" text="Cargar Partida" />
-            <Button mnemonicParsing="false" onAction="#ajustes" prefWidth="100.0" text="Ajustes" />
+            <Button mnemonicParsing="false" onAction="#crear" prefWidth="100.0" styleClass="buttonMenu" stylesheets="@styles/DarkTheme.css" text="Nueva Partida" />
+            <Button mnemonicParsing="false" onAction="#cargarPartida" prefWidth="100.0" styleClass="buttonMenu" stylesheets="@styles/DarkTheme.css" text="Cargar Partida" />
+            <Button mnemonicParsing="false" onAction="#ajustes" prefWidth="100.0" styleClass="buttonMenu" stylesheets="@styles/DarkTheme.css" text="Ajustes" />
          </children>
       </VBox>
    </center>

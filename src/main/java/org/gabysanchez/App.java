@@ -31,9 +31,9 @@ public class App extends Application {
                 e.consume();save();
             }});
 
-
-
-        scene = new Scene(loadFXML("menu"), 960, 540);
+        stage.setMinWidth(1280);
+        stage.setMinHeight(720);
+        scene = new Scene(loadFXML("menu"), 1280, 720);
         stage.setScene(scene);
         stage.show();
 

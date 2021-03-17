@@ -31,7 +31,9 @@ public class MenuCrearController {
                 }
             }
             if (crear){
-                Controller.getInstance().setPartida(new Partida());
+                Partida partida = new Partida();
+                partida.setNombre(text.getText());
+                Controller.getInstance().setPartida(partida);
                 Controller.getInstance().colocar();
             }
         }else {

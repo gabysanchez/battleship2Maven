@@ -97,6 +97,7 @@ public class Controller {
             partida.getJ1().setnBarcos(10);
             partida.getJ2().setnBarcos(10);
             partida.setEstadoPartida(EstadoPartida.COMBATE);
+            scene.update();
         }
     }
     public void finish() throws IOException {

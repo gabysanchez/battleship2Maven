@@ -17,7 +17,9 @@ import org.gabysanchez.ui.scenes.SceneTablero;
 
 public class UiTableroAtaque extends UiTablero{
 
-    public UiTableroAtaque() {}
+    public UiTableroAtaque() {
+
+    }
 
     @Override
     protected EventHandler<MouseEvent> eventMouseEntered(Boton bt) {

@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuCargarController">
+<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@styles/DarkTheme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuCargarController">
    <center>
       <VBox fx:id="VboxBarcos" alignment="CENTER" prefHeight="485.0" prefWidth="934.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane maxWidth="-Infinity" minHeight="-Infinity" prefHeight="374.0" prefWidth="564.0">
+            <ScrollPane maxWidth="-Infinity" minHeight="-Infinity" prefHeight="374.0" prefWidth="564.0" stylesheets="@styles/DarkTheme.css">
                <content>
                   <VBox alignment="CENTER" prefHeight="90.0" prefWidth="546.0" spacing="25.0" />
                </content>
@@ -22,8 +22,8 @@
             </ScrollPane>
             <HBox alignment="CENTER" prefHeight="114.0" prefWidth="934.0" spacing="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#volver" text="Atras" />
-                  <CheckBox mnemonicParsing="false" onAction="#visible" prefHeight="17.0" prefWidth="73.0" text="Borrar" />
+                  <Button mnemonicParsing="false" onAction="#volver" styleClass="buttonMenuSmall" stylesheets="@styles/DarkTheme.css" text="Atras" />
+                  <CheckBox mnemonicParsing="false" onAction="#visible" prefHeight="17.0" prefWidth="73.0" styleClass="buttonMenuSmall" stylesheets="@styles/DarkTheme.css" text="Borrar" />
                </children>
             </HBox>
          </children></VBox>
