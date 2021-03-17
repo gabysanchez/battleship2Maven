@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="battleship2Maven-master" />
+=======
+>>>>>>> d8a3686cc8ba689c3e55ef17b27388ce600f86ad
         <module name="battleship2Maven" />
       </profile>
     </annotationProcessing>
