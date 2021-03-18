@@ -29,6 +29,7 @@ public class ControllerSpecific {
                 casilla.setBarco(null);
             }
         }
+        Controller.getInstance().getPartida().getJ1().setnBarcos(10);
         try {
             Controller.getInstance().getScene().getUiTableroDefensa().setEstado(EstadoUiTablero.USE);
             Controller.getInstance().colocar();
