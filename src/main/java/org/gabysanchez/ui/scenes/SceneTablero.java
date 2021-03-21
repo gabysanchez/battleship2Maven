@@ -14,7 +14,7 @@ import org.gabysanchez.ui.tablero.UiTableroDefensa;
 public abstract class SceneTablero {
     Scene escena = App.getScene();
     HBox boxIz = (HBox) escena.getRoot().getChildrenUnmodifiable().get(1);
-    VBox panelBotones = (VBox) boxIz.getChildrenUnmodifiable().get(1);
+
 
     Jugador jugador;
 

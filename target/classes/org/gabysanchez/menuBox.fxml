@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="375.0" spacing="25.0" styleClass="background" stylesheets="@styles/DarkTheme.css" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuBox">
+   <children>
+      <Button mnemonicParsing="false" onAction="#continuar" prefHeight="35.0" prefWidth="138.0" styleClass="buttonBox" text="Continuar" />
+      <Button fx:id="btSave" mnemonicParsing="false" onAction="#guardar" styleClass="buttonBox" text="Guardar Partida" />
+      <Button mnemonicParsing="false" onAction="#menu" styleClass="buttonBox" text="Menu Principal" />
+      <Button mnemonicParsing="false" onAction="#salir" styleClass="buttonBox" text="Salir al Escritorio" />
+   </children>
+</VBox>

@@ -57,6 +57,11 @@
 	-fx-text-fill: #E5E5E5;
 
 }
+.textMess{
+	-fx-font: 15px Tahoma;
+	-fx-text-fill: #E5E5E5;
+
+}
 
 /* Styling the slider track */
 .jfx-slider>.track {
@@ -75,5 +80,137 @@
 	-fx-font: 20px Tahoma;
 }
 
+.scroll-pane > .viewport  { 
 
+	-fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+}
+.buttonMenuSmallX{
+	-fx-background-color: 
+        #090a0c,
+        linear-gradient(#4B3A38 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#C33819, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 16px;
+    
+    -fx-pref-width: 3px;
+}
+.buttonMenuSmallX:hover {
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #136CA3 0%, #659E99 100%),
+        #43837A,
+        #32C189,
+        radial-gradient(center 50% 50%, radius 100%, #A32413, #659E99);
+}
+.buttonMenuSmallC{
+	-fx-background-color: 
+        #090a0c,
+        linear-gradient(#9A9EA1 0%, #1C2125 20%, #191d22 100%),
+        linear-gradient(#092A3D, #1E333F),
+        radial-gradient(center 50% 0%, radius 100%, rgba(43,48,53,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 16px;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-width: 300px;
+}
+.buttonMenuSmallC:hover {
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #4E6763 0%, #132322 100%),
+        #558343,
+        #15521F,
+        radial-gradient(center 50% 50%, radius 100%, #4E6763, #132322);
+}
+.buttonBox{
+	-fx-background-color:
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#87B0AF, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-width: 100px;
+}
+.buttonBox:hover {
+    -fx-background-color:
+        linear-gradient(from 0% 93% to 0% 100%, #687C89 0%, #373939 100%),
+        #43837A,
+        #626F6E,
+        radial-gradient(center 50% 50%, radius 100%, #687C89, #373939);
+}
+.backgroundBox {
+   -fx-background-color: 
+        #81858F,
+        linear-gradient(#DDE3EC 0%, #DDE3EC 20%, #ABBDD4 100%),
+        linear-gradient(#E3EBF3, #B6DBDD),
+        radial-gradient(center 50% 0%, radius 100%, rgba(192,209,228,0.9), rgba(255,255,255,0));
+}
+.textMenuTitulo{
+	-fx-font: 100px Arial;
+	-fx-text-fill: #E5E5E5;
 
+}
+
+.buttonGirar{
+	-fx-background-color:
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#87B0AF, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+  -fx-background-image: url("./../assets/arrow.png");
+  -fx-background-repeat: stretch;
+  -fx-background-position: center center;
+  -fx-pref-width: 85px;
+  -fx-pref-height: 85px;
+}
+.buttonGirar:hover {
+     -fx-background-color:
+        linear-gradient(from 0% 93% to 0% 100%, #687C89 0%, #373939 100%),
+        #43837A,
+        #626F6E,
+        radial-gradient(center 50% 50%, radius 100%, #687C89, #373939);
+
+}
+.buttonBorrar{
+	-fx-background-color:
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#87B0AF, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+  -fx-background-image: url("./../assets/trash.png");
+  -fx-background-repeat: stretch;
+  -fx-background-position: center center;
+  -fx-pref-width: 85px;
+  -fx-pref-height: 85px;
+}
+.buttonBorrar:hover {
+     -fx-background-color:
+        linear-gradient(from 0% 93% to 0% 100%, #687C89 0%, #373939 100%),
+        #43837A,
+        #626F6E,
+        radial-gradient(center 50% 50%, radius 100%, #687C89, #373939);
+
+}

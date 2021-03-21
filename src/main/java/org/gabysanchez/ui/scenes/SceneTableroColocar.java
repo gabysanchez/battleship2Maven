@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.WindowEvent;
 import org.gabysanchez.App;
 import org.gabysanchez.entities.Jugador;
@@ -22,6 +23,7 @@ public class SceneTableroColocar extends SceneTablero{
         uiTableroAtaque.setEstado(EstadoUiTablero.VIEW);
     }
     public void create(){
+        VBox panelBotones = (VBox) boxIz.getChildrenUnmodifiable().get(1);
         //System.out.println(escena.getRoot().getChildrenUnmodifiable());
         for (Class<? extends Barco> key : jugador.getMapBarcos().keySet()){
             List<Barco> tipoBarco = jugador.getMapBarcos().get(key);
@@ -31,7 +33,7 @@ public class SceneTableroColocar extends SceneTablero{
             Button bt = new Button();
             bt.setText(name[1]);
             bt.setPrefWidth(128);
-            bt.setPrefHeight(32);
+            bt.getStyleClass().add("buttonMenuSmall");
             bt.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent e) {
@@ -40,7 +42,10 @@ public class SceneTableroColocar extends SceneTablero{
             });
             Label tx = new Label();
             tx.setText(String.valueOf(tipoBarco.size()));
-            tx.setStyle("-fx-font: 24 arial;");
+            tx.getStyleClass().add("textMenu");
+            tx.setStyle("-fx-font: 30px Tahoma;");
+            cajaBoton.setSpacing(20);
+            bt.setStyle("-fx-font: 15px Tahoma;");
 
             cajaBoton.getChildren().add(bt);
             cajaBoton.getChildren().add(tx);
@@ -51,6 +56,7 @@ public class SceneTableroColocar extends SceneTablero{
 
 
     public void update(){
+        VBox panelBotones = (VBox) boxIz.getChildrenUnmodifiable().get(1);
         panelBotones.getChildren().clear();
         create();
     }

@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@styles/DarkTheme.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuContoller">
+<BorderPane fx:id="PanelMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@styles/DarkTheme.css" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.MenuContoller">
    <center>
       <VBox fx:id="VboxBarcos" alignment="CENTER" prefHeight="670.0" prefWidth="935.0" spacing="25.0" BorderPane.alignment="CENTER">
          <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textMenuTitulo" text="BATTLESHIP" textAlignment="CENTER" wrappingWidth="829.13671875">
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Text>
             <Button mnemonicParsing="false" onAction="#crear" prefWidth="100.0" styleClass="buttonMenu" stylesheets="@styles/DarkTheme.css" text="Nueva Partida" />
             <Button mnemonicParsing="false" onAction="#cargarPartida" prefWidth="100.0" styleClass="buttonMenu" stylesheets="@styles/DarkTheme.css" text="Cargar Partida" />
             <Button mnemonicParsing="false" onAction="#ajustes" prefWidth="100.0" styleClass="buttonMenu" stylesheets="@styles/DarkTheme.css" text="Ajustes" />
          </children>
       </VBox>
    </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Region prefHeight="100.0" prefWidth="480.0" />
+            <Text fill="#f8f6f6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textMess" text="By Gabriel Sánchez Rodrigo" textAlignment="CENTER" wrappingWidth="416.13671875" />
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>

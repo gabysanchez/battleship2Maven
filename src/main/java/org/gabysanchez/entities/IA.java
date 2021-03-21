@@ -115,10 +115,10 @@ public class IA extends Jugador {
             casilla = getTableroAtaque().getCasillas()[x][y];
             if (casilla.getEstado().equals(EstadoCasilla.AGUA)&&!casillasVetada.contains(casilla)){
                     if (casilla.getBarco()!=null){
-                        if (casilla.getBarco().getLongitud()>1){
+                        if (casilla.getBarco().getLongitud()>1&&Controller.getInstance().getPartida().getDificultad().equals(Dificultad.DIFICIL)){
                             casilla=getTableroAtaque().getCasillas()[casilla.getBarco().getX()][casilla.getBarco().getY()];
-                            disparo=casilla;
                         }
+                        disparo=casilla;
                         almacenarCasillas(casilla);
                     }else {
                         disparo=null;
@@ -135,7 +135,7 @@ public class IA extends Jugador {
                 for (int j = casilla.getY() - 1; j <= casilla.getY() + 1; j++) {
                     if (j >= 0 && j <getTableroAtaque().getCasillas().length) {
                         Casilla casilla2 = getTableroAtaque().getCasillas()[i][j];
-                        if (!casillasVetada.contains(casilla2)&&casilla2.getBarco()!=null){
+                        if (!casillasVetada.contains(casilla2)&&casilla2.getBarco()==null){
                             casillasVetada.add(casilla2);
                         }
                     }

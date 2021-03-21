@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Battleship">
+    <output-path>$PROJECT_DIR$/out/artifacts/Battleship</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="org.gabysanchez.App" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/main/resources/org/gabysanchez/assets/icons/boatIcon.png" />
+            <option name="macIcon" value="$PROJECT_DIR$/src/main/resources/org/gabysanchez/assets/icons/boatIcon.icns" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/main/resources/org/gabysanchez/assets/icons/boatIcon.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="title" value="Battleship" />
+        <option name="vendor" value="gabysanchez" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="battleship2Maven.jar">
+        <element id="module-output" name="battleship2Maven" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -26,6 +26,12 @@ public class SceneTableroCombate extends SceneTablero{
         valorJ2.setText(String.valueOf(Controller.getInstance().getPartida().getJ1().getnBarcos()));
         nameJ1.setText(Controller.getInstance().getPartida().getJ1().getNombre());
         valorJ1.setText(String.valueOf(Controller.getInstance().getPartida().getJ2().getnBarcos()));
+
+        HBox HboxIz = (HBox) escena.getRoot().getChildrenUnmodifiable().get(1);
+        VBox VboxIz = (VBox) HboxIz.getChildren().get(0);
+        Label dificultad = (Label) VboxIz.getChildren().get(1);
+        dificultad.setText(String.valueOf(Controller.getInstance().getPartida().getDificultad()));
+
     }
     public void update(){
         create();

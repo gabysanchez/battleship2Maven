@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.ControllerSpecific">
+<BorderPane fx:id="PanelTexto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="background" stylesheets="@styles/DarkTheme.css" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gabysanchez.ControllerSpecific">
    <center>
       <VBox fx:id="VboxBarcos" alignment="CENTER" maxWidth="500.0" prefHeight="511.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,7 @@
    <left>
       <HBox fx:id="HboxIz" alignment="CENTER_RIGHT" prefHeight="720.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <children>
-            <Region prefHeight="511.0" prefWidth="150.0" />
+            <Region prefHeight="720.0" prefWidth="74.0" />
             <VBox alignment="CENTER" prefHeight="720.0" prefWidth="164.0" spacing="10.0" />
          </children>
       </HBox>
@@ -31,8 +31,8 @@
          <children>
             <VBox alignment="CENTER_LEFT" prefHeight="720.0" prefWidth="160.0" spacing="25.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#girar" text="Girar" />
-                  <Button mnemonicParsing="false" onAction="#borrar" text="Borrar" />
+                  <Button mnemonicParsing="false" onAction="#girar" prefHeight="77.0" prefWidth="82.0" styleClass="buttonGirar" />
+                  <Button mnemonicParsing="false" onAction="#borrar" styleClass="buttonBorrar" />
                </children>
             </VBox>
          </children>

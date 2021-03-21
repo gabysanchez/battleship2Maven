@@ -25,6 +25,7 @@ public class MenuCargarController {
         VBox lista = (VBox) pane.getContent();
         DAOFactory.getInstance().getDaoPartidasSerializable().getPartidas();
         List<Partida>partidas = Controller.getInstance().getPartidas();
+        pane.setFitToWidth(true);
         partidas.forEach(partida -> {
             HBox fila = new HBox();
             fila.setAlignment(Pos.CENTER);
@@ -34,7 +35,9 @@ public class MenuCargarController {
             btBorrar.setText("X");
             btBorrar.setVisible(false);
             btPartida.setText(partida.getNombre()+"     "+partida.getFecha());
-            btPartida.setMinWidth(300);
+            btPartida.setMinWidth(400);
+            btPartida.getStyleClass().add("buttonMenuSmallC");
+            btBorrar.getStyleClass().add("buttonMenuSmallX");
             fila.getChildren().add(btPartida);
             fila.getChildren().add(btBorrar);
             lista.getChildren().add(fila);
